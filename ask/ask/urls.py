@@ -1,8 +1,7 @@
-from django.conf.urls import patterns, include, url
+from django.conf.urls import url, include
+#from django.contrib import admin
 
-from django.contrib import admin
-admin.autodiscover()
-
-urlpatterns = patterns('',
-    url(r'^', include('qa.urls')),
-)
+urlpatterns = [
+	url(r'^', include('qa.urls')),
+    #url(r'^admin/', admin.site.urls),
+]

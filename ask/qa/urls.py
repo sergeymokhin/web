@@ -1,24 +1,13 @@
-from django.conf.urls import include, url, patterns 
-from django.contrib import admin
-admin.autodiscover()
+from django.conf.urls import url
 
-'''
-urlpatterns = [  
-    url(r'^$', 'qa.views.test'),
-    url(r'^login/.*$', 'qa.views.test'),
-    url(r'^signup/.*$', 'qa.views.test'),
-    url(r'^question/\d+/$', 'qa.views.test'),
-    url(r'^ask/.*$', 'qa.views.test'),
-    url(r'^popular/.*$', 'qa.views.test'),
-    url(r'^new/.*$', 'qa.views.test')
+from . import views
+
+urlpatterns = [
+    url(r'^$', views.test, name='index'),
+    url(r'^login/$', views.test, name='login'),
+    url(r'^signup/$', views.test, name='signup'),
+    url(r'^question/\d+/$', views.test, name='question'),
+    url(r'^ask/', views.test, name='ask'),
+    url(r'^popular/$', views.test, name='popular'),
+    url(r'^new/$', views.test, name='new'),
 ]
-'''
-urlpatterns = patterns('qa.views',                                              
-   url(r'^$', 'test'),                                                              
-   url(r'^login/.*$', 'test', name='login'),                                    
-   url(r'^signup/.*', 'test', name='signup'),                                   
-   url(r'^question/(?P<id>[0-9]+)/$', 'test', name='question'),                 
-   url(r'^ask/.*', 'test', name='ask'),                                         
-   url(r'^popular/.*', 'test', name='popular'),                                 
-   url(r'^new/.*', 'test', name='new'),                                         
-)
